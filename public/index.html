@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Colectiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="audio-player" loop>
+        <source src="audio1.mp3" type="audio/mpeg">
+        <source src="audio1.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="visualizer" class="visualizer-container">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div id="app">
+        <h1>AGENDA COLECTIVA</h1>
+        <p>Todos los elementos son generados por los usuarios</p>
+        
+        <button onclick="openAddModal()">AGREGAR</button>
+        <button onclick="clearAll()">REMOVER TODO</button>
+
+        <div id="agenda-list"></div>
+    </div>
+
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <h2>Agregar Elemento</h2>
+            <label>Materia:</label>
+            <select id="subject" style="max-width:50%;">
+                <option>Orientación Educativa</option>
+                <option>Formación para el Trabajo</option>
+                <option>[Humanidades] Ciencias de la Comunicación</option>
+                <option>[Ciencias de la Salud] Temas Selectos de Ciencias de la Salud</option>
+                <option>[Físico-Matemático] Temas Selectos de Química</option>
+                <option>Geografía</option>
+                <option>Seminario de Cultura Regional</option>
+                <option>Educación Física</option>
+                <option>[Humanidades/Ciencias de la Salud/Físico-Matemático] Cálculo</option>
+                <option>[Humanidades/Ciencias de la Salud] Temas Selectos de Matemáticas</option>
+                <option>Formación en la Fe</option>
+                <option>[Avanzados 3 A] Reading & Writing</option>
+                <option>[Avanzados 3 A] Listening & Speaking</option>
+                <option>[Avanzados 3 B] Reading & Writing</option>
+                <option>[Avanzados 3 B] Listening & Speaking</option>
+                <option>Estructura Socioeconómica de México</option>
+                <option>Social Studies</option>
+                <option>Servicio Comunitario</option>
+                <option>Informática</option>
+                <option>Educación Artística</option>
+                <option>[Humanidades] Sociología</option>
+                <option>[Ciencias de la Salud] Temas Selectos de Biología</option>
+                <option>[Físico-Matemático] Temas Selectos de Física</option>
+                <option>Probabilidad y Estadística</option>
+                <option>Robótica</option>
+                <option>Otro</option>
+            </select>
+            <br>
+            <label>Detalles:</label>
+            <textarea id="details" maxlength="300"></textarea>
+            <br>
+            <label>Emisión:</label>
+            <input type="date" id="emissionDate">
+            <br>
+            <label>Entrega:</label>
+            <input type="date" id="deadlineDate">
+            <br>
+            <button onclick="addElement()">AGREGAR</button>
+            <button onclick="closeAddModal()">CANCELAR</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
